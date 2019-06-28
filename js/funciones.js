@@ -232,9 +232,9 @@ function log(tipoEvento, pantalla, descripcion) {
 
 function inicializarPush() {
   log("200", "push", "push empezano:antes if ");
-    if (!navigator.userAgent.match(/(iPhone|iPod|iPad|Android)/)) {
+   /* if (!navigator.userAgent.match(/(iPhone|iPod|iPad|Android)/)) {
         return;
-    }
+    }*/
     /*var push = PushNotification.init({
         "android": {
             "senderID": "574495076299",
