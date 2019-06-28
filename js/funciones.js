@@ -234,7 +234,7 @@ function inicializarPush() {
     if (!navigator.userAgent.match(/(iPhone|iPod|iPad|Android)/)) {
         return;
     }
-    var push = PushNotification.init({
+    /*var push = PushNotification.init({
         "android": {
             "senderID": "574495076299",
             "icon": "iconotificaciones",
@@ -247,7 +247,19 @@ function inicializarPush() {
             "badge": true,
             "topics": ["all","ios"]
         }
-    });
+    });*/
+    var push = PushNotification.init({
+       android: {
+           senderID: "574495076299"
+       },
+       ios: {
+           alert: "true",
+           badge: "true",
+           sound: "true"
+       },
+       windows: {}
+   });
+
 log("200", "push", "push empezano ");
     push.on("registration", function(data) {
         var oldRegId = getConfigValue("registrationId");
