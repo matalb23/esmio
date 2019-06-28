@@ -24,13 +24,13 @@ var app = {
     },
 
     scan: function() {
-        console.log('scanning');
+
 var nombre = document.forms["objetoform"]["NOMBRE"].value;
 if (nombre == "") {
   alert("Debe completar el nombre");
    return false;
 }
-
+      console.log('scanning');
         var scanner = cordova.plugins.barcodeScanner;
 
         scanner.scan( function (result) {

@@ -313,15 +313,16 @@ function inicializarLoading() {
 }
 
 function inicializarHome() {
-    inicializarPush();
-    chequearAvisos();
     obtenerDatosInicio();
+    inicializarPush();
+  //  chequearAvisos();
+
     ocultarCargando();
     setTimeout(function() {
         ocultarSplashScreen();
     }, 1000);
 }
-
+/*
 function inicializarServicios() {
     inicializarPush();
 
@@ -338,8 +339,8 @@ function inicializarServicios() {
     $(".ike-hogar").on("click", function(e) {
         setConfigValue("tipoServicio", "Hogar");
     });
-}
-
+}*/
+/*
 function inicializarAdjudicaciones() {
     mostrarCargando();
     inicializarPush();
@@ -378,7 +379,7 @@ function inicializarAdjudicaciones() {
     }
     ocultarCargando();
 }
-
+*//*
 function inicializarAvisos() {
     mostrarCargando();
     inicializarPush();
@@ -453,7 +454,7 @@ function aceptarAdjudicacion() {
         log("400", "servicios-vw-mis-avisos", "Error al llamar al servicio " + url);
     }
     ocultarCargando();
-}
+}*/
 
 function abrirChat() {
     var nombre = getConfigValue("nombre").split(" ")[0];

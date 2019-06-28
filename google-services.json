@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "574495076299",
+    "firebase_url": "https://esmio-12183.firebaseio.com",
+    "project_id": "esmio-12183",
+    "storage_bucket": "esmio-12183.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:574495076299:android:f372b28cee580ff8",
+        "android_client_info": {
+          "package_name": "com.esmio.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "574495076299-kpe4ru0ifear0h1iqmtbuui8unsuq7uh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmrxGghnzK-lfH-uLT2jcnmyWs0pz2pC4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "574495076299-kpe4ru0ifear0h1iqmtbuui8unsuq7uh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "574495076299-kp6iv9ohjsninvclf8u2f8fnjdnob9db.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.esmio.android"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
