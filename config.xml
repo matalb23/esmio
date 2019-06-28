@@ -128,8 +128,8 @@
 	<plugin name="cordova-plugin-file" source="npm"/>
 	<plugin name="cordova-plugin-file-opener2" source="npm" />
 	<!--<plugin name="cordova-plugin-geolocation" source="npm" />
-    <plugin name="cordova-plugin-inappbrowser" source="npm" />-->
-    <plugin name="cordova-plugin-network-information" source="npm" />
+    <plugin name="cordova-plugin-inappbrowser" source="npm" />
+    <plugin name="cordova-plugin-network-information" source="npm" />-->
     <!--<plugin name="cordova-plugin-spinnerdialog" source="npm" />
     <plugin name="cordova-plugin-splashscreen" source="npm" />
     <plugin name="cordova-plugin-whitelist" source="npm" />
