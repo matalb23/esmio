@@ -99,13 +99,10 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
-    <platform name="ios">
-        <allow-intent href="itms:*" />
-        <allow-intent href="itms-apps:*" />
-    </platform>
-    <engine name="android" spec="^6.2.3" />
+  
+ <!--   <engine name="android" spec="^6.2.3" />
       <engine name="ios" spec="^4.4.0" />
- <!-- <plugin name="cordova-plugin-device" spec="~1.1.6" />
+  <plugin name="cordova-plugin-device" spec="~1.1.6" />
     <plugin name="cordova-plugin-dialogs" spec="~1.3.3" />
     <plugin name="cordova-plugin-file" />
     <plugin name="cordova-plugin-file-opener2" spec="^2.0.19" />
@@ -131,14 +128,14 @@
     <plugin name="cordova-plugin-network-information" source="npm" />
     <plugin name="cordova-plugin-spinnerdialog" source="npm" />
     <plugin name="cordova-plugin-splashscreen" source="npm" />
-    <!-- <plugin name="cordova-plugin-whitelist" source="npm" />-->
+    <plugin name="cordova-plugin-whitelist" source="npm" />
     <plugin name="cordova-plugin-x-toast" source="npm"/>
-	<!-- <plugin name="phonegap-plugin-push" source="npm"/>
+	<plugin name="phonegap-plugin-push" source="npm">
        <variable name="SENDER_ID" value="574495076299" />
-    </plugin>-->
-	<plugin name="phonegap-plugin-push" spec="~2.2.0">
+    </plugin>
+	<!--	<plugin name="phonegap-plugin-push" spec="~2.2.0">
 		<variable name="FCM_VERSION" value="15.0.0" />
-	</plugin>
+	</plugin>-->
 
 	 <plugin name="phonegap-plugin-barcodescanner" source="npm" spec="~4.1.0" />
 </widget>
