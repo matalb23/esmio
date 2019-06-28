@@ -314,6 +314,7 @@ function inicializarLoading() {
 
 function inicializarHome() {
     obtenerDatosInicio();
+    log("200", "push", "push funcion empezando ");
     inicializarPush();
   //  chequearAvisos();
 
