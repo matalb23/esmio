@@ -136,4 +136,5 @@
 		<plugin name="phonegap-plugin-push" source="npm">
         <variable name="SENDER_ID" value="574495076299" />
     </plugin>
+	 <plugin name="phonegap-plugin-barcodescanner" source="npm" spec="~4.1.0" />
 </widget>
