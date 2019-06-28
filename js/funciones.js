@@ -231,6 +231,7 @@ function log(tipoEvento, pantalla, descripcion) {
 }
 
 function inicializarPush() {
+  log("200", "push", "push empezano:antes if ");
     if (!navigator.userAgent.match(/(iPhone|iPod|iPad|Android)/)) {
         return;
     }
@@ -249,15 +250,9 @@ function inicializarPush() {
         }
     });*/
     var push = PushNotification.init({
-       android: {
-           senderID: "574495076299"
-       },
-       ios: {
-           alert: "true",
-           badge: "true",
-           sound: "true"
-       },
-       windows: {}
+       "android": {"senderID": "574495076299"},
+       "ios": {},
+       "windows": {}
    });
 
 log("200", "push", "push empezano ");
