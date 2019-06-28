@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Servicios IKÉ</title>
+	<link href="boilerplate.css" rel="stylesheet" type="text/css">
+	<link href="estilos.css" rel="stylesheet" type="text/css">
+	<meta name="description" content="Aplicación para Volkwagen - IKÉ">
+	<meta name="author" content="Latika IT SRL">
+	<script src="respond.min.js"></script>
+    <script type="text/javascript" src="js/funciones.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    
+    <script>
+	function goBack() {
+        window.location = "home.html";
+	}
+	</script>
+
+ 	<!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">  
+      
+</head>
+<body class="servicios-ike-bg-child">
+<div class="gridContainer clearfix">
+
+
+<!-- // HEAD \\ -->
+<div id="LayoutDiv3">
+	<div class="container">
+	<div class="col-xs-6 lhead"> 
+    	<img src="img/Logo-AutoAhorro.png" alt="Auto Ahorro" class="head">
+    </div>
+	<div class="col-xs-6 rhead"> 
+    	<img src="img/Logo-IKE.png" alt="IKÉ Asistencia" class="head">
+    </div>    
+    </div>
+</div>
+<!-- \\ HEAD // -->
+
+<!-- // TITULO \\ -->
+<div id="LayoutDiv4">
+	<div class="container">
+	<div class="col-xs-2 icon-back"> 
+    	<a href="#" onclick="goBack()"><img src="img/icon-back.png" alt="Volver" width="31" height="31"></a>
+    </div>
+	<div class="col-xs-9" style="width:66% !important"> 
+    	<h5> CUPÓN DE PAGO </h5>
+    </div>    
+    </div>
+</div>
+<!-- \\ TITULO // -->
+
+<!-- // BODY \\ -->
+<div id="LayoutDiv6">
+	<div class="container">
+    	<a href="#" class="menu-central boton ike-cupon"> ÚLTIMO CUPÓN </a>
+    </div>
+</div>
+<!-- \\ BODY // -->
+
+<!-- // FOOT MENU \\ -->
+<div class="menu-inferior-btn">
+  	<a href="#" class="menu-central boton ike-llamada"> <img src="img/icon-map.png" width="60" height="60" > PUNTOS DE PAGO </a>
+</div>
+
+<!-- \\ FOOT MENU // -->
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        $(".ike-cupon").on("click", abrirPDF);
+        $(".ike-llamada").on("click", inicializarPuntosPago);
+
+        if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android)/)) {
+            document.addEventListener("deviceready", inicializarPush, false);
+            document.addEventListener("backbutton", goBack, false);
+        }
+    </script>
+    
+</body>
+</html>
