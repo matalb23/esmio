@@ -120,7 +120,9 @@
         <variable name="SENDER_ID" value="574495076299" />
     </plugin>
 	-->
-	<plugin name="cordova-plugin-device" source="npm" />
+	
+	
+	 <!--<plugin name="cordova-plugin-device" source="npm" />-->
 
 	<plugin name="cordova-plugin-dialogs" source="npm" />
 	<plugin name="cordova-plugin-file" source="npm"/>
