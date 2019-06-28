@@ -248,7 +248,7 @@ function inicializarPush() {
             "topics": ["all","ios"]
         }
     });
-
+log("200", "push", "push empezano ");
     push.on("registration", function(data) {
         var oldRegId = getConfigValue("registrationId");
         if (oldRegId !== data.registrationId) {
