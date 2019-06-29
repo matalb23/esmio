@@ -132,8 +132,8 @@
     <plugin name="cordova-plugin-spinnerdialog" source="npm" />
     <plugin name="cordova-plugin-splashscreen" source="npm" />
     <plugin name="cordova-plugin-whitelist" source="npm" />
-    <plugin name="cordova-plugin-x-toast" source="npm"/>
-	<!--<plugin name="phonegap-plugin-push" source="npm">
+    <!--<<plugin name="cordova-plugin-x-toast" source="npm"/>
+	plugin name="phonegap-plugin-push" source="npm">
        <variable name="SENDER_ID" value="574495076299" />
     </plugin>-->
 	<plugin name="phonegap-plugin-push" spec="2.1.3">
