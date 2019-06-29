@@ -11,6 +11,8 @@
     <preference name="DisallowOverscroll" value="true" />
    <!-- <preference name="permissions" value="none" />
     <preference name="phonegap-version" value="7.0.0" />-->
+	
+	<!--
     <preference name="orientation" value="portrait" />
     <preference name="target-device" value="universal" />
     <preference name="fullscreen" value="false" />
@@ -33,6 +35,7 @@
     <preference name="LoadUrlTimeoutValue" value="70000" />
 	<preference name="android-targetSdkVersion" value="28" />
     <preference name="android-build-tool" value="gradle" />
+	-->
     <platform name="android">
         <icon density="ldpi" src="www/res/icon/android/icon-36-ldpi.png" />
         <icon density="mdpi" src="www/res/icon/android/icon-48-mdpi.png" />
