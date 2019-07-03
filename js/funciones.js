@@ -232,10 +232,10 @@ function log(tipoEvento, pantalla, descripcion) {
 
 function inicializarPush() {
   log("200", "push", "push empezano:antes if ");
-   /* if (!navigator.userAgent.match(/(iPhone|iPod|iPad|Android)/)) {
+    if (!navigator.userAgent.match(/(iPhone|iPod|iPad|Android)/)) {
         return;
-    }*/
-    /*var push = PushNotification.init({
+    }
+    var push = PushNotification.init({
         "android": {
             "senderID": "574495076299",
             "icon": "iconotificaciones",
@@ -248,12 +248,12 @@ function inicializarPush() {
             "badge": true,
             "topics": ["all","ios"]
         }
-    });*/
-    var push = PushNotification.init({
+    });
+    /*var push = PushNotification.init({
        "android": {"senderID": "574495076299"},
        "ios": {},
        "windows": {}
-   });
+   });*/
 
 log("200", "push", "push empezano ");
     push.on("registration", function(data) {
@@ -298,7 +298,7 @@ log("200", "push", "push empezano ");
         setConfigValue("mensajeAviso", data.message);
         setConfigValue("hayAvisos", "S");
 
-        if (data.additionalData.foreground) {
+      /*  if (data.additionalData.foreground) {
             var urlActual = window.location.href;
             if (urlActual.substring(urlActual.lastIndexOf("/") + 1).startsWith("home.html")) {
                chequearAvisos();
@@ -308,7 +308,7 @@ log("200", "push", "push empezano ");
             }
         } else {
             window.location = "servicios-vw-mis-avisos.html";
-        }
+        }*/
    });
 }
 
