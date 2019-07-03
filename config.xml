@@ -8,11 +8,9 @@
         Latika IT SRL
     </author>
     <content src="index.html" />
-    <!-- <preference name="DisallowOverscroll" value="true" />-->
+    <preference name="DisallowOverscroll" value="true" />
    <!-- <preference name="permissions" value="none" />
     <preference name="phonegap-version" value="7.0.0" />-->
-	
-	<!--
     <preference name="orientation" value="portrait" />
     <preference name="target-device" value="universal" />
     <preference name="fullscreen" value="false" />
@@ -22,7 +20,7 @@
     <preference name="detect-data-types" value="true" />
     <preference name="exit-on-suspend" value="false" />
     <preference name="disable-cursor" value="false" />
-    <preference name="android-minSdkVersion" value="15" />
+    <preference name="android-minSdkVersion" value="16" />
     <preference name="android-installLocation" value="auto" />
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashShowOnlyFirstTime" value="false" />
@@ -35,8 +33,8 @@
     <preference name="LoadUrlTimeoutValue" value="70000" />
 	<preference name="android-targetSdkVersion" value="28" />
     <preference name="android-build-tool" value="gradle" />
-	-->
     <platform name="android">
+		<resource-file src="google-services.json" target="google-services.json" />
         <icon density="ldpi" src="www/res/icon/android/icon-36-ldpi.png" />
         <icon density="mdpi" src="www/res/icon/android/icon-48-mdpi.png" />
         <icon density="hdpi" src="www/res/icon/android/icon-72-hdpi.png" />
@@ -102,10 +100,13 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
-  
- <!--   <engine name="android" spec="^6.2.3" />
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+    <engine name="android" spec="^6.2.3" />
       <engine name="ios" spec="^4.4.0" />
-  <plugin name="cordova-plugin-device" spec="~1.1.6" />
+ <!-- <plugin name="cordova-plugin-device" spec="~1.1.6" />
     <plugin name="cordova-plugin-dialogs" spec="~1.3.3" />
     <plugin name="cordova-plugin-file" />
     <plugin name="cordova-plugin-file-opener2" spec="^2.0.19" />
@@ -126,23 +127,15 @@
 	<plugin name="cordova-plugin-dialogs" source="npm" />
 	<plugin name="cordova-plugin-file" source="npm"/>
 	<!--<plugin name="cordova-plugin-file-opener2" source="npm" /> PROBLEMAS EN PHONEGAPBUILD-->
-	<!--<plugin name="cordova-plugin-geolocation" source="npm" />
+	<plugin name="cordova-plugin-geolocation" source="npm" />
     <plugin name="cordova-plugin-inappbrowser" source="npm" />
-    <plugin name="cordova-plugin-network-information" source="npm" />-->
+    <plugin name="cordova-plugin-network-information" source="npm" />
     <plugin name="cordova-plugin-spinnerdialog" source="npm" />
     <plugin name="cordova-plugin-splashscreen" source="npm" />
     <plugin name="cordova-plugin-whitelist" source="npm" />
-    <!--<<plugin name="cordova-plugin-x-toast" source="npm"/>
-	plugin name="phonegap-plugin-push" source="npm">
-       <variable name="SENDER_ID" value="574495076299" />
-    </plugin>-->
-	<plugin name="phonegap-plugin-push" >
+    <plugin name="cordova-plugin-x-toast" source="npm"/>
+	<plugin name="phonegap-plugin-push" spec="1.9.0" source="npm">
         <variable name="SENDER_ID" value="574495076299" />
-        <variable name="FCM_VERSION" value="11.6.2" />
     </plugin>
-	<!--	<plugin name="phonegap-plugin-push" spec="~2.2.0">
-		<variable name="FCM_VERSION" value="15.0.0" />
-	</plugin>-->
-
 	 <plugin name="phonegap-plugin-barcodescanner" source="npm" spec="~4.1.0" />
 </widget>
