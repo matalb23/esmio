@@ -251,16 +251,18 @@ function inicializarPush() {
     });*/
 	log("200", "push", "push empezano ");
  window.plugins.PushbotsPlugin.initialize("5d29ce14b79412212252d1f5", {"android":{"sender_id":"574495076299"}});
+ 
+ window.plugins.PushbotsPlugin.on("registered", function(token){
+	alert("Registration Id:" + token);
+});
+//Get user registrationId/token and userId on PushBots, with evey launch of the app even launching with notification
+window.plugins.PushbotsPlugin.on("user:ids", function(data){
+	alert("user:ids" + JSON.stringify(data));
+});
 // Only with First time registration
-
+/*
 window.plugins.PushbotsPlugin.on("registered", function(token){
 	log("200", "push", "entro a pushbots ");
-	//window.plugins.PushbotsPlugin.on("user:ids", function(token){
-		alert(token);
-		alert(token);
-	//console.log("Registration Id:" + token);
-//});
-    //push.on("registration", function(data) {
         var oldRegId = getConfigValue("registrationId");
         if (oldRegId !== token) {
             setConfigValue("registrationId",token);
@@ -291,19 +293,8 @@ window.plugins.PushbotsPlugin.on("registered", function(token){
                 log("400", "home", "Error al llamar al servicio " + url);
             }
         }
-    });
-/*
-    push.on("error", function(e) {
-        mostrarDialogoError(e.message);
-    });
+    });*/
 
-    push.on("notification", function(data) {
-        setConfigValue("tituloAviso", data.title);
-        setConfigValue("mensajeAviso", data.message);
-        setConfigValue("hayAvisos", "S");
-
-  
-   });*/
 }
 
 function inicializarLoading() {
