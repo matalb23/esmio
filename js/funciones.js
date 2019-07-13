@@ -249,15 +249,14 @@ function inicializarPush() {
             "topics": ["all","ios"]
         }
     });*/
+	log("200", "push", "push empezano ");
  window.plugins.PushbotsPlugin.initialize("5d29ce14b79412212252d1f5", {"android":{"sender_id":"574495076299"}});
 // Only with First time registration
-log("200", "push", "push empezano ");
-window.plugins.PushbotsPlugin.on("registered", function(token){
-	console.log("Registration Id:" + token);
+
+//window.plugins.PushbotsPlugin.on("registered", function(token){
+	window.plugins.PushbotsPlugin.on("user:ids", function(token){
+	//console.log("Registration Id:" + token);
 //});
-
-
-
     //push.on("registration", function(data) {
         var oldRegId = getConfigValue("registrationId");
         if (oldRegId !== token) {
@@ -290,7 +289,7 @@ window.plugins.PushbotsPlugin.on("registered", function(token){
             }
         }
     });
-
+/*
     push.on("error", function(e) {
         mostrarDialogoError(e.message);
     });
@@ -300,18 +299,8 @@ window.plugins.PushbotsPlugin.on("registered", function(token){
         setConfigValue("mensajeAviso", data.message);
         setConfigValue("hayAvisos", "S");
 
-      /*  if (data.additionalData.foreground) {
-            var urlActual = window.location.href;
-            if (urlActual.substring(urlActual.lastIndexOf("/") + 1).startsWith("home.html")) {
-               chequearAvisos();
-            }
-            else if (urlActual.substring(urlActual.lastIndexOf("/") + 1).startsWith("servicios-vw-mis-avisos.html")) {
-               inicializarAvisos();
-            }
-        } else {
-            window.location = "servicios-vw-mis-avisos.html";
-        }*/
-   });
+  
+   });*/
 }
 
 function inicializarLoading() {
