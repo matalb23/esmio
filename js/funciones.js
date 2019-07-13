@@ -235,7 +235,7 @@ function inicializarPush() {
     if (!navigator.userAgent.match(/(iPhone|iPod|iPad|Android)/)) {
         return;
     }
-    var push = PushNotification.init({
+   /* var push = PushNotification.init({
         "android": {
             "senderID": "574495076299",
             "icon": "iconotificaciones",
@@ -248,18 +248,20 @@ function inicializarPush() {
             "badge": true,
             "topics": ["all","ios"]
         }
-    });
-    /*var push = PushNotification.init({
-       "android": {"senderID": "574495076299"},
-       "ios": {},
-       "windows": {}
-   });*/
-
+    });*/
+ window.plugins.PushbotsPlugin.initialize("5d29ce14b79412212252d1f5", {"android":{"sender_id":"574495076299"}});
+// Only with First time registration
 log("200", "push", "push empezano ");
-    push.on("registration", function(data) {
+window.plugins.PushbotsPlugin.on("registered", function(token){
+	console.log("Registration Id:" + token);
+//});
+
+
+
+    //push.on("registration", function(data) {
         var oldRegId = getConfigValue("registrationId");
-        if (oldRegId !== data.registrationId) {
-            setConfigValue("registrationId", data.registrationId);
+        if (oldRegId !== token) {
+            setConfigValue("registrationId",token);
 
             var usuario = getConfigValue("usuario");
 
@@ -272,7 +274,7 @@ log("200", "push", "push empezano ");
 
             var parametros = {
                 login: usuario,
-                token: data.registrationId,
+                token: token,
                 so: SO
             };
 

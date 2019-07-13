@@ -121,7 +121,12 @@
         <variable name="SENDER_ID" value="574495076299" />
     </plugin>
 	-->
-
+	<gap:plugin name="pushbots-cordova-plugin" spec="1.6.x" source="npm" />
+	<preference name="android-minSdkVersion" value="19" />
+	<preference name="android-build-tool" value="gradle" />
+	<preference name="phonegap-version" value="cli-8.1.1" />
+	
+	
 
 	 <plugin name="cordova-plugin-device" source="npm" />
 	<plugin name="cordova-plugin-dialogs" source="npm" />
@@ -134,9 +139,9 @@
     <plugin name="cordova-plugin-splashscreen" source="npm" />
     <plugin name="cordova-plugin-whitelist" source="npm" />
     <plugin name="cordova-plugin-x-toast" source="npm"/>
-	<plugin name="cordova-plugin-firebase" source="npm"/>
+	<!--<plugin name="cordova-plugin-firebase" source="npm"/>
 	<plugin name="phonegap-plugin-push" spec="1.9.0" source="npm">
         <variable name="SENDER_ID" value="574495076299" />
-    </plugin>
+    </plugin>-->
 	 <plugin name="phonegap-plugin-barcodescanner" source="npm" spec="~4.1.0" />
 </widget>
