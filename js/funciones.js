@@ -255,6 +255,7 @@ function inicializarPush() {
 
 //window.plugins.PushbotsPlugin.on("registered", function(token){
 	window.plugins.PushbotsPlugin.on("user:ids", function(token){
+		alert(data.token);
 		alert(token);
 	//console.log("Registration Id:" + token);
 //});
