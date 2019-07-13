@@ -258,6 +258,40 @@ function inicializarPush() {
 //Get user registrationId/token and userId on PushBots, with evey launch of the app even launching with notification
 window.plugins.PushbotsPlugin.on("user:ids", function(data){
 	alert("user:ids" + JSON.stringify(data));
+	alert("user:ids" + JSON.stringify(data.token));
+	log("200", "push", "entro a pushbots ");
+        var oldRegId = getConfigValue("registrationId");
+        if (oldRegId !== token) {
+            setConfigValue("registrationId",token);
+
+            var usuario = getConfigValue("usuario");
+
+            var SO = "";
+            if (device.platform == "Android") {
+                SO = "a";
+            } else if (device.platform == "iOS") {
+                SO = "i";
+            }
+
+            var parametros = {
+                login: usuario,
+                token: token,
+                so: SO
+            };
+
+            var url = URL_SERVIDOR_REST + "api/notificacion_token";
+            var response = llamarServicioRestPOSTJSON(url, parametros);
+
+            if (response.estado && response.estado == "ok") {
+                log("200", "home", "Llamado exitoso al servicio " + url);
+            } else if (response.errores && response.errores.length > 0) {
+                log("401", "home", "Error al llamar al servicio " + url + " - " + response.errores[0].descripcion);
+            } else {
+                log("400", "home", "Error al llamar al servicio " + url);
+            }
+        }
+	
+	
 });
 // Only with First time registration
 /*
