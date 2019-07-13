@@ -253,9 +253,10 @@ function inicializarPush() {
  window.plugins.PushbotsPlugin.initialize("5d29ce14b79412212252d1f5", {"android":{"sender_id":"574495076299"}});
 // Only with First time registration
 
-//window.plugins.PushbotsPlugin.on("registered", function(token){
-	window.plugins.PushbotsPlugin.on("user:ids", function(token){
-		alert(data.token);
+window.plugins.PushbotsPlugin.on("registered", function(token){
+	log("200", "push", "entro a pushbots ");
+	//window.plugins.PushbotsPlugin.on("user:ids", function(token){
+		alert(token);
 		alert(token);
 	//console.log("Registration Id:" + token);
 //});
