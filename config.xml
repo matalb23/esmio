@@ -33,7 +33,7 @@
     <preference name="LoadUrlTimeoutValue" value="70000" />
 	<preference name="android-targetSdkVersion" value="28" />
     <preference name="android-build-tool" value="gradle" />
-    <platform name="android">
+     <!--<platform name="android">
 		<resource-file src="google-services.json" target="google-services.json" />
         <icon density="ldpi" src="www/res/icon/android/icon-36-ldpi.png" />
         <icon density="mdpi" src="www/res/icon/android/icon-48-mdpi.png" />
@@ -85,7 +85,7 @@
         <splash height="1536" src="www/res/screen/ios/screen-ipad-landscape-2x.png" width="2048" />
         <splash height="2048" src="www/res/screen/ios/screen-ipad-landscape-ipadpro.png" width="2732" />
         <splash height="2732" src="www/res/screen/ios/screen-ipad-portrait-ipadpro.png" width="2048" />
-    </platform>
+    </platform>-->
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
