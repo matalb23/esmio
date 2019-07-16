@@ -166,10 +166,7 @@ function llamarServicioRestGETFile(url) {
 }
 
 function login() {
-    // var grupo = getConfigValue("grupo");
-    // var orden = getConfigValue("orden");
-    // var tipoDoc = getConfigValue("tipoDoc");
-    // var numDoc = getConfigValue("numDoc");
+
     var usuario = getConfigValue("usuario");
     var password = getConfigValue("clave");
 
@@ -231,35 +228,23 @@ function log(tipoEvento, pantalla, descripcion) {
 }
 
 function inicializarPush() {
-  log("200", "push", "push empezano:antes if ");
-    if (!navigator.userAgent.match(/(iPhone|iPod|iPad|Android)/)) {
-        return;
-    }
-   /* var push = PushNotification.init({
-        "android": {
-            "senderID": "574495076299",
-            "icon": "iconotificaciones",
-            "iconColor": "#2472b5",
-            "topics": ["all","android"]
-        },
-        "ios": {
-            "sound": true,
-            "vibration": true,
-            "badge": true,
-            "topics": ["all","ios"]
-        }
-    });*/
-	log("200", "push", "push empezano ");
- window.plugins.PushbotsPlugin.initialize("5d29ce14b79412212252d1f5", {"android":{"sender_id":"574495076299"}});
+	
+		if (!navigator.userAgent.match(/(iPhone|iPod|iPad|Android)/)) {
+			return;
+		}
  
- window.plugins.PushbotsPlugin.on("registered", function(token){
-	alert("Registration Id:" + token);
-});
-//Get user registrationId/token and userId on PushBots, with evey launch of the app even launching with notification
-window.plugins.PushbotsPlugin.on("user:ids", function(data){
+	window.plugins.PushbotsPlugin.initialize("5d29ce14b79412212252d1f5", {"android":{"sender_id":"574495076299"}});
+
+	window.plugins.PushbotsPlugin.on("registered", function(token){
+	
+	 log("200", "push", "Registration Id:" + JSON.stringify(data));
+	});
+	//Get user registrationId/token and userId on PushBots, with evey launch of the app even launching with notification
+	window.plugins.PushbotsPlugin.on("user:ids", function(data){
 	//alert("user:ids" + JSON.stringify(data));
-	alert("user:ids" + JSON.stringify(data.token));
-	log("200", "push", "entro a pushbots ");
+	 log("200", "push", "user:ids:" + JSON.stringify(data));
+	//console.log("user:ids" + JSON.stringify(data.token));
+	
 	var token=data.token;
         var oldRegId = getConfigValue("registrationId");
         if (oldRegId !== token) {
@@ -341,7 +326,7 @@ function inicializarLoading() {
 
 function inicializarHome() {
     obtenerDatosInicio();
-    log("200", "push", "push funcion empezando ");
+    
     inicializarPush();
   //  chequearAvisos();
 
