@@ -1,0 +1,79 @@
+
+<ion-content class="base">
+<div class="bg-login parallax">
+  <form  #form="ngForm" (ngSubmit)="register(form)">
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <p class="logo1 animated fadeInDown" style="text-align: center;margin-bottom: -10px;padding-top: 20px;">
+            <a href="#"><img src="../../assets/img/logo.png" width="150"></a>
+          </p>
+          <div padding>
+            <p style="margin: 15px; color:rgb(255, 255, 255) !important; font-size: 15px; text-align: center;" >
+              Registrate para poder identificar tus objetos!
+            </p>
+            <ion-item style="margin-top: 13px;">
+              <ion-input  name="login" type="text" placeholder="USUARIO" ngModel required style="FONT-SIZE: 12PX;"></ion-input>
+            </ion-item>
+            <label style="background: #ffffff;padding: 3px 14px 2px 14px;font-size: 11px;text-transform: uppercase;color: #adb5bd;
+            font-weight: 600;position: relative;top: -49px;z-index: 99;float: right;margin-bottom: -10px;">USUARIO</label>
+            <ion-item style="margin-top: 13px;">
+                <ion-input  name="name" type="text" placeholder="NOMBRE A MOSTRAR" ngModel required style="FONT-SIZE: 12PX;"></ion-input>
+            </ion-item>
+            <label style="background: #ffffff;padding: 3px 14px 2px 14px;font-size: 11px;text-transform: uppercase;color: #adb5bd;
+            font-weight: 600;position: relative;top: -49px;z-index: 99;float: right;margin-bottom: -10px;">NOMBRE / ALIAS</label>
+            <ion-item style="margin-top: 13px;">
+              <ion-input name="email" type="email" placeholder="HOLA@ESMIOAPP.COM.AR" ngModel required style="FONT-SIZE: 12PX;"></ion-input>
+            </ion-item >
+            <label style="background: #ffffff;padding: 3px 14px 2px 14px;font-size: 11px;text-transform: uppercase;color: #adb5bd;
+            font-weight: 600;position: relative;top: -49px;z-index: 99;float: right;margin-bottom: -10px;">EMAIL</label>
+            <ion-item style="margin-top: 13px;">
+              <ion-input name="pswd" type="password" placeholder="CONTRASEÑA" ngModel required style="FONT-SIZE: 12PX;"></ion-input>
+            </ion-item>
+            <label style="background: #ffffff;padding: 3px 14px 2px 14px;font-size: 11px;text-transform: uppercase;color: #adb5bd;
+            font-weight: 600;position: relative;top: -49px;z-index: 99;float: right;margin-bottom: -10px;">CONTRASEÑA</label>
+            <ion-item style="margin-top: 13px; margin-bottom: 13px;">
+              <ion-input name="confirmar" type="password" placeholder="CONFIRMAR CONTRASEÑA" ngModel required style="FONT-SIZE: 12PX;"></ion-input>
+            </ion-item>
+            <label style="background: #ffffff;padding: 3px 14px 2px 14px;font-size: 11px;text-transform: uppercase;color: #adb5bd;
+            font-weight: 600;position: relative;top: -62px;z-index: 99;float: right;margin-bottom: -10px;">CONFIRMAR</label>
+            
+            <ion-item style="margin-top: 1px;width: 100%;top: -9px;">
+              <ion-select style="padding-left: 0px;" name="pais_codigo" ngModel required style="FONT-SIZE: 12PX;" multiple="false" placeholder="PAÍS"  [(ngModel)]="AR"  okText="Seleccionar" cancelText="Cancelar"  >
+                  <ion-select-option value="AR">Argentina</ion-select-option>
+                  <ion-select-option value="BO">Bolivia</ion-select-option>
+                  <ion-select-option value="BR">Brasil</ion-select-option>
+                  <ion-select-option value="CL">Chile</ion-select-option>
+                  <ion-select-option value="PY">Paraguay</ion-select-option>
+                  <ion-select-option value="PE">Perú</ion-select-option>
+                  <ion-select-option value="CO">Colombia</ion-select-option>                  
+                  <ion-select-option value="GT">Guatemala</ion-select-option>
+                  <ion-select-option value="PA">Panamá</ion-select-option>
+                  <ion-select-option value="ES">España</ion-select-option>
+                  <ion-select-option value="US">Estados Unidos</ion-select-option>
+                </ion-select>
+                
+                <ion-input  name="phone_cell" type="text" placeholder="Cod. Area + Número" ngModel required style="FONT-SIZE: 12PX;"></ion-input>
+                 <label style="background: #ffffff;padding: 3px 14px 2px 14px;font-size: 11px;text-transform: uppercase;color: #adb5bd;
+            font-weight: 600;position: relative;top: -17px;z-index: 99;float: right;margin-bottom: -10px;right: -13px;">CELULAR</label>
+                <ion-input  name="phone_cell_formatted" type="hidden" style="position: absolute;"  ngModel ></ion-input>
+            </ion-item>
+            
+            <ion-item style="margin-top: 5px;">
+              <ion-label style="font-size: 13px;">Enviar mi información Automáticamente</ion-label>              
+              <ion-checkbox  [(ngModel)]="auto_envio_info"  name="auto_envio_info" checked="false" ngModel ></ion-checkbox>
+              
+          </ion-item>
+          <p style="color: #fff; font-size: 10px;margin-top: 5px;">Si activas esta opción, cuando alguien encuentre un objeto tuyo, <strong>automáticamente </strong>recibirá tus datos de contacto y así podrás recuperarlo.</p>
+              
+            
+
+            <button  size="large" type="submit" [disabled]="form.invalid" expand="block" class="btn-login"  style="margin-top: 13px;">REGISTRARME!</button>
+            
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</div>
+</ion-content>

@@ -1,0 +1,100 @@
+<!--
+  <ion-header>
+  <ion-toolbar>
+    <div class="col-3-left"> <ion-buttons slot="start"> <ion-back-button></ion-back-button> </ion-buttons><img src="assets/chevron-left-solid.svg" style="max-width: 10px;" /> </div>
+    <div class="col-3-center" routerLink="/home"> <img src="assets/qrcode-solid.svg" style="max-width: 23px;top: 5px;position: relative;" /></div>
+    <div class="col-3-right">Hola <strong>{{usuario}}</strong></div>
+  </ion-toolbar>
+</ion-header>
+-->
+<!-- // DAMIAN ABRE EL CONTENIDO \\ -->
+<ion-content class="base">
+<link href="../../assets/fontawesome-web/css/all.css" rel="stylesheet">
+<link href="../../assets/fontawesome-web/css/solid.css" rel="stylesheet">
+<div class="cabezal-sm parallax">
+  <div class="row">
+    <p class="col-2 animated fadeInDown">
+      <a routerLink="/grupo"><img src="../../assets/img/back.png" width="79" class="iconos-cab-izq-sm"></a>
+    </p>
+    <p class="col-8 animated fadeInDown h1">
+    Mis Objetos  
+   </p>
+    <p class="col-2 animated fadeInDown">
+      <a routerLink="/grupo"><img src="../../assets/img/logo-sm.png" width="79" class="iconos-cab-der-sm"></a>
+    </p>
+  </div>
+</div>
+
+<div *ngIf = "error != '' "> 
+  <h5 class="card-title-esmio" style="margin: 20px;">
+    <br>  
+    {{error}}
+    </h5>
+</div>
+<div class="cuerpo-internas">
+  <ion-list>
+    
+  <ion-item *ngFor="let objeto of misobjetos">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <p>
+              
+              <span style="font-size: 12px;color: #6c757d;">Grupo: {{ objeto.grupoDescripcion }} </span>
+              <br/>
+              <button  size="large" expand="block" (click)="borrar(objeto.id,objeto.nombre)" class="btn-secondary" style="font-weight: 700;
+              background-color: #f8f9fa !important;border-color: #adb5bd !important;width: 33px;
+              font-size: 12px;padding: 3px;border-radius: 65px;color: #adb5bd !important;
+              border: solid 1px;position: relative;top: -22px;float: right;
+              text-align: center;line-height: 24px;">
+              <img src="../../assets/fontawesome-web/svgs/solid/trash-alt.svg" style="width: 13px;position: relative;
+              top: -1px;"> 
+              </button>
+              
+              <span style="font-size: 1.2em;color: #e7372d;font-weight: 600;text-transform: uppercase;"><!--Nombre:-->{{ objeto.nombre }}</span>
+              <br/>
+              <span style="font-size: 1em;color: #6c757d;"><!--Descripción:-->{{ objeto.descripcion }}</span>
+              <br>   <br>           
+             <!-- <span style="font-size: 0.7em;color: #6c757d;">Grupo: {{ objeto.grupoDescripcion }} </span>-->
+              <span style="font-size: 0.7em;color: #6c757d;">Creado: {{objeto.fecha | date: 'dd/MM/yyyy H:mm' }} </span>
+              <span style="font-size: 0.7em;color: #6c757d;">QR: {{ objeto.codigo }}</span>
+              <br>
+              
+              <!--<ion-button  size="large" expand="block" (click)="borrar(objeto.id)" class="btn-eliminar">
+              eliminar
+              </ion-button>  -->
+            </p>
+          
+          <!-- 0!=respondio -->
+          <!-- <div id="respondiste" *ngFor="let tipoRespuesta of respuestaList" >
+              <div *ngIf = "mensaje.respuesta != '0' && mensaje.respuesta==tipoRespuesta.id">               
+                  <p style="font-size:0.8em; color: #28e070;"><strong style="color: #000000;">Respondiste:</strong> {{tipoRespuesta.descripcion}}</p>       
+              </div>
+          </div> -->
+          </ion-col>
+        </ion-row>  
+      </ion-grid> 
+    </ion-item>
+  </ion-list>
+</div>
+</ion-content>
+<!-- \\ DAMIAN CIERRA EL CONTENIDO //-->  
+<ion-footer>
+    <ion-toolbar>
+      <div class="col-3-left-footer">
+        <a (click)="irPerfil()" >
+          <img src="../../assets/img/avatar-footer-17.png"  style="max-width: 50px;" />
+        </a>
+      </div>
+      <div class="col-3-center" routerLink="/misavisos">
+        <a href="irMisAvisos()">
+          <img src="../../assets/img/notifications-17.png" style="max-width: 50px;" />
+        </a>
+      </div>
+      <div class="col-3-right-footer" routerLink="/grupo">
+        <a href="#">
+          <img src="../../assets/img/objetos.png" style="max-width: 50px;" />
+        </a>
+      </div>
+    </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,61 @@
+<ion-content class="base">
+  <div class="cabezal-sm parallax">
+    <div class="row">
+      <p class="col-2 animated fadeInDown">
+        <a routerLink="/home"><img src="../../assets/img/back.png" width="79" class="iconos-cab-izq-sm"></a>
+      </p>
+      <p class="col-8 animated fadeInDown h1">
+      Grupo
+      </p>
+      <p class="col-2 animated fadeInDown">
+        <a routerLink="/home"><img src="../../assets/img/logo-sm.png" width="79" class="iconos-cab-der-sm"></a>
+      </p>
+    </div>
+  </div>
+  
+  <div *ngIf = "error != '' "> 
+    <h5 class="card-title-esmio" style="margin: 20px;">
+      <br>  
+      {{error}}
+      </h5>
+  </div>
+  
+  <div class="cuerpo-internas">
+    <ion-list>
+    <ion-item *ngFor="let grupo of grupos">
+        <ion-grid>
+          <ion-row>
+            <ion-col style="line-height: 37px;">
+              <!-- <span style="font-size: 0.7em;color: #6c757d;">Grupo:  </span> -->
+              {{ grupo.descripcion }}
+            </ion-col>
+            <ion-col>
+                <button  size="large" expand="block" (click)="seleccionar(grupo.id)" class="btn-secondary" style="font-weight: 600;padding: 4px;background-color: #fff !important; border-color: #704394 !important;width: 100%;border-radius: 50px;color: #704394 !important;BORDER: SOLID 2PX;" >Abrir</button>
+            </ion-col>
+          </ion-row>  
+        </ion-grid> 
+      </ion-item>
+    </ion-list>
+  </div>
+  </ion-content>
+  <!-- \\ DAMIAN CIERRA EL CONTENIDO //-->  
+  <ion-footer>
+      <ion-toolbar>
+        <div class="col-3-left-footer">
+          <a (click)="irPerfil()" >
+            <img src="../../assets/img/avatar-footer-17.png"  style="max-width: 50px;" />
+          </a>
+        </div>
+        <div class="col-3-center" routerLink="/misavisos">
+          <a href="irMisAvisos()">
+            <img src="../../assets/img/notifications-17.png" style="max-width: 50px;" />
+          </a>
+        </div>
+        <div class="col-3-right-footer" routerLink="/grupo">
+          <a href="#">
+            <img src="../../assets/img/objetos.png" style="max-width: 50px;" />
+          </a>
+        </div>
+      </ion-toolbar>
+  </ion-footer>
+  

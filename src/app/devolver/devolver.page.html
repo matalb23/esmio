@@ -1,0 +1,114 @@
+<!--<ion-header>
+  <ion-toolbar>
+    <ion-title>BACK</ion-title>
+    <div class="col-3-left"> <ion-buttons slot="start"> <ion-back-button></ion-back-button> </ion-buttons><img src="assets/chevron-left-solid.svg" style="max-width: 10px;" /> </div>
+    <div class="col-3-center" routerLink="/home"> <img src="assets/qrcode-solid.svg" style="max-width: 23px;top: 5px;position: relative;" /></div>
+    <div class="col-3-right">Hola <strong>{{usuario}}!</strong></div>
+  </ion-toolbar>
+</ion-header>-->
+<!-- // DAMIAN ABRE EL CONTENIDO \\ -->
+<ion-content  class="base">
+  <div class="cabezal-sm parallax">
+        <div class="row">
+          <p class="col-2 animated fadeInDown">
+            <a href="#"><img src="../../assets/img/back.png" width="79" class="iconos-cab-izq-sm"></a>
+          </p>
+          <p class="col-8 animated fadeInDown h1">
+          Genial {{usuario}}! 
+          </p>
+          <p class="col-2 animated fadeInDown">
+            <a href="/home"><img src="../../assets/img/logo-sm.png" width="79" class="iconos-cab-der-sm"></a>
+          </p>
+        </div>
+ </div>
+
+
+  <form  #form="ngForm" (ngSubmit)="scanCode(form)">
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div text-center>
+            <br>
+            <br>
+            <h3>Gracias!</h3>
+            <span style="font-size: 1em">Elegiste devolver el producto, y te agradecemos por ser solidari@! </span>
+          </div>
+          <div padding>
+            <!-- <ion-item>
+              <ion-input  name="nombre" type="text" placeholder="NOMBRE DEL OBJETO" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input name="descripcion" type="text" placeholder="DESCRIPCIÓN" ngModel required></ion-input>
+            </ion-item> -->
+            <!-- <ion-item>
+              <ion-input name="codigo" type="text" placeholder="codigo" ngModel required></ion-input>
+            </ion-item> -->
+            
+          </div>
+          <div padding>
+            <button  size="large" type="submit" [disabled]="form.invalid" expand="block" class="btn-secondary" >ESCANEAR QR</button>
+            <!--<ion-button  size="large" type="submit" [disabled]="form.invalid" expand="block">ESCANEAR QR</ion-button>
+            -->
+          </div>
+          
+        <!-- <ion-button (click)="scanCode(form)">
+            Scan Code
+          </ion-button> -->
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+
+  <!-- <h1>Click Button To Scan</h1>
+
+  <ion-button (click)="scanCode()">
+    Scan Code
+  </ion-button>
+ 
+  <div *ngIf="scannedData">
+    <p>
+      Scanned Code Text : <b>{{ scannedData["text"] }}</b>
+    </p>
+    <p>
+      Scanned Code Format : <b>{{ scannedData["format"] }}</b>
+    </p>
+  </div>
+ 
+  <h1>Enter Value to Create QR code</h1>
+  <ion-input type="text" [(ngModel)]="encodedData"></ion-input>
+ 
+  <ion-button (click)="encodedText()">
+    Create QR
+  </ion-button> -->
+
+</ion-content>
+<!-- \\ DAMIAN CIERRA EL CONTENIDO //--> 
+<ion-footer>
+    <ion-toolbar>
+      <div class="col-3-left-footer">
+        <a (click)="irLogout()" >
+          <img src="../../assets/img/avatar-footer-17.png"  style="max-width: 50px;" />
+        </a>
+      </div>
+      <div class="col-3-center" routerLink="/misavisos">
+        <a href="irMisAvisos()">
+          <img src="../../assets/img/notifications-17.png" style="max-width: 50px;" />
+        </a>
+      </div>
+      <div class="col-3-right-footer" routerLink="/grupo">
+        <a href="#">
+          <img src="../../assets/img/objetos.png" style="max-width: 50px;" />
+        </a>
+      </div>
+    </ion-toolbar>
+</ion-footer>
+<!--
+<ion-footer>
+    <ion-toolbar>
+      <div class="col-3-left-footer" routerLink="/grupo"><img src="assets/list-ul-solid.svg"  style="max-width: 20px;" /><p style="font-size: 12px;top: -33px;position: relative;text-align: center;">Mis Objetos</p> </div>
+      <div class="col-3-center" routerLink="/misavisos"><img src="assets/bell-regular.svg" style="max-width: 20px;" /><p style="font-size: 12px;top: -33px;position: relative;text-align: center;">Mis Avisos</p>  </div>
+      <div class="col-3-right-footer"><img src="assets/user-regular.svg" style="max-width: 20px;" /><p style="font-size: 12px;top: -33px;position: relative;text-align: center;">Perfil</p>  </div>
+    </ion-toolbar> 
+</ion-footer>
+-->

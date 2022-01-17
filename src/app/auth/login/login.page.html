@@ -1,0 +1,37 @@
+
+<ion-content class="base" >
+<div class="bg-login parallax">
+  <form #form="ngForm" (ngSubmit)="login(form)">
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+            <p class="logo1 animated fadeInDown" style="text-align: center;">
+                <a href="#"><img src="../../assets/img/logo.png" width="150"></a>
+            </p> 
+          <div padding>
+            <ion-item style="padding-top: 20px; background: none !important">
+              <ion-input name="login" type="text" placeholder="USUARIO" ngModel required></ion-input>
+            </ion-item>
+            <ion-item style="padding-top: 20px; background: none !important">
+              <ion-input name="pswd" type="password" placeholder="CONTRASEÑA" ngModel required></ion-input>
+            </ion-item>
+          </div>
+      
+          <div padding style="text-align: center;">
+            <button size="large" type="submit" [disabled]="form.invalid" expand="block" class="btn-login">INGRESAR</button>
+            
+            <br>
+            
+            <a (click)="iraregistrar()" style="color: #fff !important;line-height: 60px;"> Registrarme!</a> 
+            <br><br>
+            
+          </div>
+        </ion-col>
+      </ion-row>
+
+    
+      
+    </ion-grid>
+  </form>
+</div>
+</ion-content>

@@ -1,0 +1,133 @@
+<!--
+<ion-header>  
+  <ion-toolbar>
+    <ion-title>BACK</ion-title> 
+    <div class="col-3-left"> <strong>EsMio</strong></div> 
+    <div class="col-3-center"> <img src="assets/qrcode-solid.svg" style="max-width: 23px;top: 5px;position: relative;" /></div>
+    <div class="col-3-right">Hola <strong>{{usuario}}!</strong></div>
+  </ion-toolbar>
+</ion-header>
+-->
+
+<!-- // DAMIAN ABRE EL CONTENIDO \\ -->
+<ion-content class="base">
+<div class="cabezal-lg parallax">
+  <p class="logo1 animated fadeInDown">
+    <a href="#"><img src="../../assets/img/logo.png" width="150"></a>
+  </p>
+</div>
+<div class="card card-esmio mx-auto animated fadeInDown">
+  <div class="card-body">
+    <h5 class="card-title-esmio">
+        <img src="../../assets/img/avatar-selected-17.png" class="avatar-selected" style="top: 10px; position: relative;"  />
+        <div *ngIf = "usuario!=null" style="left: 80px; top: -30px; position: relative;" > 
+          Hola, <strong class="card-bold">{{usuario}}</strong>
+        </div>
+       
+    </h5>
+    <p class="card-text">Administrá tus objetos de manera simple.</p>
+    <div class="container">
+      <div class="row">
+        <div class="col-4" style="text-align:center; padding-top: 10px;">
+            <a  (click)="irCargarObjetos()" >
+              <p class="steps mx-auto">1</p>
+              <p class="h-steps mx-auto">CARGÁ</p>
+            </a>
+        </div>
+        <div class="col-4" style="text-align:center; padding-top: 10px;">
+              <p class="steps mx-auto">2</p>
+              <p class="h-steps mx-auto">GUARDÁ</p>
+        </div>
+        <div class="col-4" style="text-align:center; padding-top: 10px;">
+              <p class="steps mx-auto">3</p>
+              <p class="h-steps mx-auto">PEGÁ</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container animated fadeInDown">
+  <div class="row">
+    <div class="col-6" style="text-align:center;">
+      <ion-button size="large" expand="block" (click)="irCargarObjetos()" class="mx-auto btn-ico btn-ico-cargar-objetos"></ion-button>
+      <p class="btn-text">
+          CARGAR OBJETOS
+      </p>
+    </div>
+    <div class="col-6" style="text-align:center;">
+      <ion-button size="large" expand="block" (click)="irMisObjetos()" class="mx-auto btn-ico btn-ico-mis-objetos"></ion-button>
+        <p class="btn-text">
+          MIS OBJETOS
+        </p>
+    </div>
+    <div class="spacer">
+    </div>
+  </div>
+</div>
+
+<div class="spacer-pre-footer">
+</div> 
+
+
+
+<!--   
+  <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div text-center>
+            <h3>Hola! DAMIAN SOS VOS?</h3>
+            <p>Administrá tus objetos de manera simple!</p>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row color="primary" justify-content-center>
+            <ion-button size="large" expand="block" (click)="irCargarObjetos()" class="mx-auto btn-ico btn-ico-cargar-objetos"><p class="txt-botones-base">CARGAR OBJETOS</p></ion-button>
+        
+        </ion-row>
+        <ion-row>    </ion-row>
+        <ion-row color="primary" justify-content-center>
+          <ion-button size="large" expand="block" (click)="irMisObjetos()"><p class="txt-botones-base">MIS OBJETOS</p></ion-button>        
+      </ion-row>
+      <ion-row>    </ion-row>
+      <ion-row color="primary" justify-content-center>
+        <ion-button size="large" expand="block" (click)="irMisAvisos()"><p class="txt-botones-base">MIS AVISOS</p></ion-button>        
+    </ion-row>
+
+    <ion-row>    </ion-row>
+    <ion-row color="primary" justify-content-center>
+      <ion-button size="large" expand="block" (click)="irLogout()"><p class="txt-botones-base">LOGOUT</p></ion-button>        
+  </ion-row>
+-->
+      <!-- <ion-row>    </ion-row>
+      <ion-row color="primary" justify-content-center>
+        <ion-button size="large" expand="block" routerLink="/devolver" ><p class="txt-botones-base">DEVOLVER</p></ion-button>        
+    </ion-row> -->
+
+    <!-- <ion-row>    </ion-row>
+    <ion-row color="primary" justify-content-center>
+      <ion-button size="large" expand="block" (click)="romper()"><p class="txt-botones-base">romper</p></ion-button>        
+  </ion-row> 
+    
+    </ion-grid>-->
+
+</ion-content>
+<!-- \\ DAMIAN CIERRA EL CONTENIDO //-->  
+<ion-footer>
+  <ion-toolbar>
+    <div class="col-3-left-footer">
+      <a (click)="irPerfil()" >
+        <img src="../../assets/img/avatar-footer-17.png"  style="max-width: 50px;" />
+      </a>
+    </div>
+    <div class="col-3-center" routerLink="/misavisos">
+      <a href="irMisAvisos()">
+        <img src="../../assets/img/notifications-17.png" style="max-width: 50px;" />
+      </a>
+    </div>
+    <div class="col-3-right-footer" routerLink="/grupo">
+      <a href="#">
+        <img src="../../assets/img/objetos.png" style="max-width: 50px;" />
+      </a>
+    </div>
+  </ion-toolbar>
+</ion-footer>

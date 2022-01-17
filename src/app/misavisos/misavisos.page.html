@@ -1,0 +1,90 @@
+<!--
+  <ion-header>
+  <ion-toolbar>
+    <div class="col-3-left"> <ion-buttons slot="start"> <ion-back-button></ion-back-button> </ion-buttons><img src="assets/chevron-left-solid.svg" style="max-width: 10px;" /> </div>
+    <div class="col-3-center" routerLink="/home"> <img src="assets/qrcode-solid.svg" style="max-width: 23px;top: 5px;position: relative;" /></div>
+    <div class="col-3-right">Hola <strong>{{usuario}}</strong></div>
+  </ion-toolbar>
+</ion-header>
+-->
+<!-- // DAMIAN ABRE EL CONTENIDO \\ -->
+<ion-content class="base">
+ <div class="cabezal-sm parallax">
+        <div class="row">
+          <p class="col-2 animated fadeInDown">
+            <a routerLink="/home"><img src="../../assets/img/back.png" width="79" class="iconos-cab-izq-sm"></a>
+          </p>
+          <p class="col-8 animated fadeInDown h1">
+          Mis Avisos
+          </p>
+          <p class="col-2 animated fadeInDown">
+            <a routerLink="/home"><img src="../../assets/img/logo-sm.png" width="79" class="iconos-cab-der-sm"></a>
+          </p>
+        </div>
+ </div>
+ <div *ngIf = "error != '' "> 
+    <h5 class="card-title-esmio" style="margin: 20px;">
+      <br>  
+      {{error}}
+      </h5>
+  </div>
+
+
+ <div class="cuerpo-internas">
+  <ion-list>
+    <!-- <h5>  Mirá si encontraron algo tuyo! </h5> -->
+    <ion-item *ngFor="let mensaje of postList">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <p style="font-size:1em">
+              <span style="font-size: 0.7em;color: #6c757d;">Recibido: {{mensaje.fecha | date: 'dd/MM/yyyy H:mm' }} </span>
+              <br/>
+              {{ mensaje.titulo }}
+              <br/>
+              <span style="font-size: 0.9em">{{ mensaje.descripcion }}</span>
+            </p>
+            <!-- 0=SINRESPUESTA -->
+            <div *ngIf = "mensaje.respuesta == '0'"> 
+                <div  *ngFor="let tipoRespuesta of respuestaList" >
+                    <button style="margin-bottom: 20px"  size="large" expand="block" (click)="responder(mensaje.id,tipoRespuesta.id)" class="btn-secondary" style="font-weight: 600;padding: 4px;background-color: #fff !important; border-color: #704394 !important;width: 100%;border-radius: 50px;color: #704394 !important;BORDER: SOLID 2PX;margin-bottom: 8px;">
+                        {{tipoRespuesta.descripcion}}
+                    </button>
+                    <!--<ion-button  size="large" expand="block" (click)="responder(mensaje.id,tipoRespuesta.id)">
+                        {{tipoRespuesta.descripcion}}
+                    </ion-button>-->
+                </div>
+            </div>
+            <!-- 0!=respondio -->
+            <div id="respondiste" *ngFor="let tipoRespuesta of respuestaList" >
+                <div *ngIf = "mensaje.respuesta != '0' && mensaje.respuesta != '-1' && mensaje.respuesta==tipoRespuesta.id">               
+                    <p style="font-size:0.8em; color: #e73e2d;"><strong style="color: #000000;">Respondiste:</strong> {{tipoRespuesta.descripcion}}</p>       
+                </div>
+            </div>
+          </ion-col>
+        </ion-row>  
+      </ion-grid> 
+    </ion-item>
+  </ion-list>
+</div>
+</ion-content>
+<!-- \\ DAMIAN CIERRA EL CONTENIDO //-->  
+<ion-footer>
+  <ion-toolbar>
+    <div class="col-3-left-footer">
+      <a (click)="irPerfil()" >
+        <img src="../../assets/img/avatar-footer-17.png"  style="max-width: 50px;" />
+      </a>
+    </div>
+    <div class="col-3-center" routerLink="/misavisos">
+      <a href="irMisAvisos()">
+        <img src="../../assets/img/notifications-17.png" style="max-width: 50px;" />
+      </a>
+    </div>
+    <div class="col-3-right-footer" routerLink="/grupo">
+      <a href="#">
+        <img src="../../assets/img/objetos.png" style="max-width: 50px;" />
+      </a>
+    </div>
+  </ion-toolbar>
+</ion-footer>

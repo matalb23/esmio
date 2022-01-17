@@ -1,0 +1,125 @@
+<!-- 
+  <ion-slides>
+    <ion-slide> -->
+
+<ion-content   class="base"  >
+  <div class="bg-login parallax">
+    <form  #form="ngForm" (ngSubmit)="guardar(form)">
+      <ion-grid>
+        <ion-row color="primary" justify-content-center>
+          <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+           <a (click)="irHome()" > 
+            <p class="logo1 animated fadeInDown" style="text-align: left;margin: 0px;padding: 8px;">
+              <img src="../../assets/img/logo.png" width="100"/>
+            </p>
+            <p style="position: relative;top: -33px;float: right;right: 10px;margin-bottom: 0px;color:#fff;font-weight: 300;">Edición de Perfil</p>
+            <p style="text-align: left;margin: 0px;padding: 8px;border-bottom: 1px solid #ffc10757;"></p>
+            <h5 style="margin: 20px 20px -50px 20px; color:rgb(255, 255, 255) !important; font-size: 25px;text-align: left" >
+              <img src="../../assets/img/avatar-selected-20.png" class="avatar-selected" />
+            </h5>
+            <h5 style="text-align: left;color: #fff;font-size: 25px;position: relative;top: 0px;left: 100px ">
+              Hola, <strong class="card-bold">{{name}}</strong>!
+            </h5>
+            <p style="color:#fff;position: relative;top: -8px;left: 102px;font-size: 11px;">USUARIO: <strong>{{login}}</strong> </p> <!-- -->
+            <!--<div class="card card-esmio mx-auto animated fadeInDown">
+              <div class="card-body">
+                <h5 class="card-title-esmio">
+                    <img src="../../assets/img/avatar-selected-17.png" class="avatar-selected" style="top: 10px; position: relative;"  />
+                    <div *ngIf = "usuario!=null" style="left: 80px; top: -30px; position: relative;" > 
+                      Hola, <strong class="card-bold">{{usuario}}</strong>!
+                    </div>
+                </h5>
+                <p class="card-text">Administrá tus objetos de manera simple.</p>
+                <div class="container">
+                  <div class="row">
+                    <div class="col-12" style="text-align:center; padding-top: 10px;">
+                          <p class="h-steps mx-auto">CARGÁ</p>
+                          
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>-->
+
+
+          </a>
+            <p style="margin: 20px; color:rgb(255, 255, 255) !important; font-size: 15px;" >
+              Para una mejor experiencia es necesario que tus datos estén correctos, así en caso de contactarte por algún objeto tuyo, podamos hacerlo. 
+            </p>
+            <div padding class="fieldOuter">
+            <ion-item style="margin-top: 0px;width: 100%;">
+                <ion-input name="Name" type="text" value="{{name}}" placeholder="NOMBRE" ngModel required style="FONT-SIZE: 12PX;"></ion-input>
+            </ion-item>
+            <label style="background: #ffffff;padding: 3px 14px 2px 14px;font-size: 11px;text-transform: uppercase;color: #adb5bd;
+            font-weight: 600;position: relative;top: -49px;z-index: 99;float: right;margin-bottom: -10px;">NOMBRE / ALIAS</label>
+            
+            <ion-item style="margin-top: 0px;width: 100%;">
+              <ion-input name="email" type="email" value="{{email}}" placeholder="HOLA@ESMIOAPP.COM.AR" ngModel required style="FONT-SIZE: 12PX;"></ion-input>
+            </ion-item >
+            <label style="background: #ffffff;padding: 3px 14px 2px 14px;font-size: 11px;text-transform: uppercase;color: #adb5bd;
+            font-weight: 600;position: relative;top: -49px;z-index: 99;float: right;margin-bottom: -10px;">E-MAIL</label>
+
+            <ion-item style="margin-top: 0px;width: 100%;">
+              <ion-input name="pswd" type="password" placeholder="CONTRASEÑA" ngModel  style="FONT-SIZE: 12PX;"></ion-input>
+            </ion-item>
+            <label style="background: #ffffff;padding: 3px 14px 2px 14px;font-size: 11px;text-transform: uppercase;color: #adb5bd;
+            font-weight: 600;position: relative;top: -49px;z-index: 99;float: right;margin-bottom: -10px;">CONTRASEÑA</label>
+            <!-- <ion-item style="margin-top: 13px; margin-bottom: 13px;">
+              <ion-input name="confirmar" type="password" placeholder="CONFIRMAR CONTRASEÑA" ngModel required></ion-input>
+            </ion-item> -->
+            
+            <ion-item style="margin-top: 0px;width: 100%;">
+              <ion-select style="padding-left: 0px;" name="pais_codigo"  multiple="false" placeholder="PAÍS"  [(ngModel)]="pais_codigo" ngModel required style="FONT-SIZE: 12PX;"  okText="Seleccionar" cancelText="Cancelar"  >
+                <ion-select-option value="AR" >Argentina</ion-select-option>
+                <ion-select-option value="BO">Bolivia</ion-select-option>
+                <ion-select-option value="BR">Brasil</ion-select-option>
+                <ion-select-option value="CL">Chile</ion-select-option>
+                <ion-select-option value="PY">Paraguay</ion-select-option>
+                <ion-select-option value="PE">Perú</ion-select-option>
+                <ion-select-option value="CO">Colombia</ion-select-option>                  
+                <ion-select-option value="GT">Guatemala</ion-select-option>
+                <ion-select-option value="PA">Panamá</ion-select-option>
+                <ion-select-option value="ES">España</ion-select-option>
+                <ion-select-option value="US">Estados Unidos</ion-select-option>
+              </ion-select>
+
+              <ion-input  name="phone_cell" type="text" value="{{phone_cell}}" placeholder="Cod. Area + Número" ngModel required style="FONT-SIZE: 12PX;"></ion-input>
+            </ion-item>
+            <label style="background: #ffffff;padding: 3px 14px 2px 14px;font-size: 11px;text-transform: uppercase;color: #adb5bd;
+            font-weight: 600;position: relative;top: -49px;z-index: 99;float: right;margin-bottom: -10px;">CELULAR</label>
+              <!--
+              <ion-item style="margin-top: 13px;">
+                  <ion-input  name="dni" type="text" value="{{dni}}" placeholder="DNI" ngModel  required></ion-input>
+              </ion-item>-->
+              
+              <ion-item style="margin-top: 0px;width: 100%;">
+                  <ion-input  name="phone" type="text" value="{{phone}}" placeholder="TELÉFONO FIJO"  ngModel required style="FONT-SIZE: 12PX;"></ion-input>
+              </ion-item> 
+              <label style="background: #ffffff;padding: 3px 14px 2px 14px;font-size: 11px;text-transform: uppercase;color: #adb5bd;
+              font-weight: 600;position: relative;top: -49px;z-index: 99;float: right;margin-bottom: -10px;">TELÉFONO FIJO</label>      
+              
+               <ion-item style="margin-top: 0px;width: 100%;">
+                  <ion-input  name="address" type="text" value="{{address}}" placeholder="DIRECCIÓN" ngModel required style="FONT-SIZE: 12PX;"></ion-input>
+              </ion-item>
+              <label style="background: #ffffff;padding: 3px 14px 2px 14px;font-size: 11px;text-transform: uppercase;color: #adb5bd;
+              font-weight: 600;position: relative;top: -49px;z-index: 99;float: right;margin-bottom: -10px;">DIRECCIÓN</label>
+
+              <ion-item style="margin-top: 0px;width: 100%;">
+                <ion-label style="font-size: 13px;">Enviar mi información Automáticamente</ion-label>              
+                <ion-checkbox  [(ngModel)]="auto_envio_info"  name="auto_envio_info" checked="false"  ></ion-checkbox>
+              </ion-item>
+              <p style="color: #fff; font-size: 10px;margin-top: 5px;">Si activas esta opción, cuando alguien encuentre un objeto tuyo, <strong>automáticamente </strong>recibirá tus datos de contacto y así podrás recuperarlo.</p>
+
+              <button  size="large" type="submit" [disabled]="form.invalid" expand="block" class="btn-login"  style="margin-top: 13px;">Guardar!</button>
+              
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>
+  </div>
+  </ion-content>
+
+<!-- </ion-slide>
+</ion-slides> -->

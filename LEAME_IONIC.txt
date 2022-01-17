@@ -1,0 +1,35 @@
+ionic cordova run android -l -c -t=Pixel
+
+ionic cordova run android
+cordova run android --prod
+ionic cordova compile android
+npm install --cache /tmp/empty-cache
+
+ ionic cordova platform remove android
+  ionic cordova platform add android   
+
+push
+  https://morioh.com/p/c0bc44ba6fcb
+
+npm install --save @ionic/storage
+npm install --save @ionic-native/barcode-scanner
+
+
+publicacion 
+https://ionicframework.com/docs/v1/guide/publishing.html
+ ionic cordova build --release android////corri varias veces esto y probe lo de lintoptions
+ 
+ 
+//va en C:\Projects\esmio\trunk\esmio_apk\platforms\android\app dentro de android
+Deshabilite esto https://forum.ionicframework.com/t/drawable-error-apk-production/163594/2
+lintOptions {//dentro de android en build.gradle
+      //abortOnError false;
+	  disable 'MissingDefaultResource'
+    }
+
+
+keytool -genkey -v -keystore my-release-key.keystore -alias esmio -keyalg RSA -keysize 2048 -validity 10000
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore app-release-unsigned.apk esmio
+
+cd C:\Users\matias\AppData\Local\Android\Sdk\build-tools\29.0.2\
+C:\Users\matias\AppData\Local\Android\Sdk\build-tools\29.0.2\zipalign.exe -v 4 app-release-unsigned.apk esmio.apk
